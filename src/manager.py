@@ -3,7 +3,7 @@ from multiprocessing import Queue
 from multiprocessing.managers import BaseManager
 
 port = 50002
-address = ('localhost', port)
+address = ("localhost", port)
 key = b"azerty"
 
 
@@ -17,8 +17,8 @@ class QueueClient:
         self.client = QueueManager(address, key)
         self.client.connect()
         # get a ref to the manager queues
-        self.task_queue_ref = self.client.get_task_queue()
-        self.result_queue_ref = self.client.get_result_queue()
+        self.task_queue = self.client.get_task_queue()
+        self.result_queue = self.client.get_result_queue()
 
 
 class QueueManager(BaseManager):
@@ -32,9 +32,9 @@ class QueueManager(BaseManager):
         self.result_queue = Queue()
 
         # create the methodes to get the queue
-        self.register("get_task_queue", callable=lambda:self.task_queue)
-        self.register("get_result_queue", callable=lambda:self.result_queue)
-        
+        self.register("get_task_queue", callable=lambda: self.task_queue)
+        self.register("get_result_queue", callable=lambda: self.result_queue)
+
     def run(self):
         # get the server object
         self.server = self.get_server()

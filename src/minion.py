@@ -8,20 +8,20 @@ class Minion(QueueClient):
         super().__init__()
 
     def getTask(self):
-        # 
+        #
         while True:
             # if the queue is not empty
-            print(self.task_queue_ref.empty())
-            if self.task_queue_ref.empty():
+            if self.task_queue.empty():
                 print("No task to process...")
                 break
             # else get a job
-            task = self.task_queue_ref.get()
+            task = self.task_queue.get()
             # process the job
             process_time = task.work()
             print(process_time)
             # put the result in the result queue
-            self.result_queue_ref.put(process_time)                
+            self.result_queue.put(process_time)
+
 
 if __name__ == "__main__":
     minion = Minion()
