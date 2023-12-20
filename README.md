@@ -29,7 +29,7 @@ pip install -U numpy
 Define a BaseManager to manage Python Queues
 
 ### src/boss.py
-Boos class that make jobs and put them in the corresponding queue
+Boss class that make jobs and put them in the corresponding queue
 
 ### src/minion.py
 Minion class that take a job, execute the job and put the time taken by the job in a result queue
@@ -38,3 +38,11 @@ Minion class that take a job, execute the job and put the time taken by the job 
 Task class that resolve a linear problem (the goal here is to make a task that take time for test purpose)
 
 ### src/proxy.py
+
+
+## Execute Python part
+Launch only one manager `python src/manager.py`.
+Launch only one boss `python src/boss.py`.
+Launch as many minions as you want `python src/minion.py`.
+
+## Execute C++ part
