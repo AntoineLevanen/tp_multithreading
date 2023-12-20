@@ -46,3 +46,8 @@ Launch only one boss `python src/boss.py`.
 Launch as many minions as you want `python src/minion.py`.
 
 ## Execute C++ part
+Launch only one manager `python src/manager.py`.
+Launch only one boss `python src/boss.py`.
+Launch only one proxy `python src/proxy.py`.
+You can get the first task in the queue by accessing it via a web browser with `htts://localhost:8000`.
+Or use `$ curl https://localhost:8000`.
