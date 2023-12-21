@@ -4,3 +4,4 @@ build/
 build-deb/
 build-rel/
 .ruff_cache/
+.vcode/

@@ -1,8 +1,12 @@
 # tp_multithreading
+This project is the realiszation of practical class to learn multithreading (and git) using Python and C++.
 
 ## dependencies
-- python 3
-- numpy
+- Python
+    - python 3
+    - numpy
+- C++
+    - dependencies are downloaded with CMakeLists.txt
 
 
 ## get the project
@@ -68,3 +72,18 @@ Use `cmake -B build -S .` to build the dependencies, then `cmake --build build`,
 Or use `$ cmake -B build-deb -S . -DCMAKE_BUILD_TYPE=Debug` to build the dependencies, then `cmake --build build-deb`, finaly execute the program with `./build-deb/low_level`.
 
 Or use `$ cmake -B build-rel -S . -DCMAKE_BUILD_TYPE=Release` to build the dependencies, then `cmake --build build-rel`, finaly execute the program with `./build-rel/low_level`.
+
+
+## Result
+Time taken to execute the task for a problem of size 3000 :
+- Python
+    - mean time : 0.444565 seconds
+- C++ using Eigen colPivHouseholderQr() solver
+    - mean time : 16.92968 seconds
+- C++ using Eigen lu() solver
+    - mean time using 1 core : 1.496276 seconds
+    - mean time using 2 core : 1.039027 seconds
+    - mean time using 4 core : 0.794219 seconds
+
+## TODO
+Send the result of the C++ work back to the `result_queue` in Python.
