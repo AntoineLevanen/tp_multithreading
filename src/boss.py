@@ -24,4 +24,4 @@ class Boss(QueueClient):
 
 if __name__ == "__main__":
     boss = Boss()
-    boss.addElement(time.time(), 3)
+    boss.addElement(time.time(), 3000)
