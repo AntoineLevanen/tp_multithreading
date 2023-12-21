@@ -1,3 +1,5 @@
 .venv
 *.pyc
 build/
+build-deb/
+build_rel/

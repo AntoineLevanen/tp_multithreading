@@ -55,13 +55,16 @@ Or use `$ curl https://localhost:8000`.
 
 ## Complile the project
 Compliation flags used by g++ :
-- -O0
-- -Os to minimize the size of exe file
-- -O1
-- -O2 (many of software are compliled with that)
+- -o0
+- -os to minimize the size of exe file
+- -o1
+- -o2 (many of software are compliled with that)
 - ...
-- -O9
+- -o9
 
 To build the project with cmake:
-use `$ cmake -B build-deb -S . -DCMAKE_BUILD_TYPE=Debug`.
-Or use `$ cmake -B build-rel -S . -DCMAKE_BUILD_TYPE=Release`.
+use `cmake -B build -S .` to build the dependencies, then `cmake --build build`, finaly execute the program with `./build/low_level`.
+
+use `$ cmake -B build-deb -S . -DCMAKE_BUILD_TYPE=Debug` to build the dependencies, then `cmake --build build-deb`, finaly execute the program with `./build-deb/low_level`.
+
+Or use `$ cmake -B build-rel -S . -DCMAKE_BUILD_TYPE=Release` to build the dependencies, then `cmake --build build-rel`, finaly execute the program with `./build-rel/low_level`.
