@@ -63,8 +63,8 @@ Compliation flags used by g++ :
 - -o9
 
 To build the project with cmake:
-use `cmake -B build -S .` to build the dependencies, then `cmake --build build`, finaly execute the program with `./build/low_level`.
+Use `cmake -B build -S .` to build the dependencies, then `cmake --build build`, finaly execute the program with `./build/low_level`.
 
-use `$ cmake -B build-deb -S . -DCMAKE_BUILD_TYPE=Debug` to build the dependencies, then `cmake --build build-deb`, finaly execute the program with `./build-deb/low_level`.
+Or use `$ cmake -B build-deb -S . -DCMAKE_BUILD_TYPE=Debug` to build the dependencies, then `cmake --build build-deb`, finaly execute the program with `./build-deb/low_level`.
 
 Or use `$ cmake -B build-rel -S . -DCMAKE_BUILD_TYPE=Release` to build the dependencies, then `cmake --build build-rel`, finaly execute the program with `./build-rel/low_level`.
