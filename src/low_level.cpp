@@ -64,6 +64,7 @@ class Task {
   void work(bool display_time) {
     auto start = chrono::high_resolution_clock::now();
     x = A.colPivHouseholderQr().solve(b);
+    // x = A.lu().solve(b);
     auto stop = chrono::high_resolution_clock::now();
     if (display_time) {
       auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
@@ -73,8 +74,10 @@ class Task {
 };
 
 int main() {
+  // to constrain the max number of thread used by Eigen
+  // Eigen::setNbThreads(4);
   Task my_task = Task();
-  my_task.work(true);
+  my_task.work(true);  // execute the task
   return 0;
 }
 
