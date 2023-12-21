@@ -51,3 +51,17 @@ Launch only one boss `python src/boss.py`.
 Launch only one proxy `python src/proxy.py`.
 You can get the first task in the queue by accessing it via a web browser with `htts://localhost:8000`.
 Or use `$ curl https://localhost:8000`.
+
+
+## Complile the project
+Compliation flags used by g++ :
+- -O0
+- -Os to minimize the size of exe file
+- -O1
+- -O2 (many of software are compliled with that)
+- ...
+- -O9
+
+To build the project with cmake:
+use `$ cmake -B build-deb -S . -DCMAKE_BUILD_TYPE=Debug`.
+Or use `$ cmake -B build-rel -S . -DCMAKE_BUILD_TYPE=Release`.
